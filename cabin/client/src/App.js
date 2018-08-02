@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Nav from './components/header/nav'
 import Header from './components/header/header'
@@ -12,7 +14,7 @@ import TodoShow from './components/todo/todoShow'
 class App extends Component {
   render() {
     return (
-      <div>
+      <MuiThemeProvider>
         <Router>
           <div>
             <Header />
@@ -26,7 +28,7 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
-      </div>
+        </MuiThemeProvider>
     );
   }
 }
